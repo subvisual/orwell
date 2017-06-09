@@ -7,7 +7,10 @@ use Mix.Config
 
 # General application configuration
 config :orwell,
-  ecto_repos: [Orwell.Repo]
+  ecto_repos: [Orwell.Repo],
+  github_owner: "subvisual",
+  github_repo: "blog",
+  github_post_path_prefix: "pages/posts"
 
 # Configures the endpoint
 config :orwell, Orwell.Web.Endpoint,

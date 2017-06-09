@@ -17,3 +17,11 @@ config :orwell, Orwell.Repo,
   database: "orwell_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :exvcr, [
+  vcr_cassette_library_dir: "test/fixtures/vcr_cassettes",
+  custom_cassette_library_dir: "test/fixtures/custom_cassettes",
+  filter_request_headers: ["Authorization"]
+]
+
+import_config "test.secret.exs"

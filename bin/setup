@@ -1,0 +1,8 @@
+#!/bin/sh
+
+env=${1:-"dev"}
+
+cp config/env.secret.exs.sample config/$env.secret.exs
+
+MIX_ENV=$env mix ecto.create
+MIX_ENV=$env mix ecto.migrate

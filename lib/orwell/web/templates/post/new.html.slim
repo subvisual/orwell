@@ -1,3 +1,12 @@
 = form_for @conn, post_path(@conn, :create), [as: :post], fn f ->
-  = textarea f, :body
+  div
+    label Title
+    = text_input f, :title
+
+  div
+    label Body
+    = textarea f, :body
+
   = submit "Submit"
+
+div = @markdown

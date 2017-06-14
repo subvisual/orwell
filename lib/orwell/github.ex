@@ -19,6 +19,23 @@ defmodule Orwell.GitHub do
     end
   end
 
+  @spec pull_request(binary, binary) :: {atom, binary}
+  def pull_request(title, branch) do
+    body = %{
+      title: title,
+      head: branch,
+      base: "master",
+      maintainer_can_modify: true,
+    }
+
+    {status, response} = GitHub.Pulls.create(body)
+
+    case status do
+      201 -> {:ok, response["html_url"]}
+      _ -> {:error, response["message"]}
+    end
+  end
+
   @spec create_branch(binary) :: Integer
   defp create_branch(name) do
     master = GitHub.References.find("heads/master")

@@ -39,7 +39,15 @@ defmodule Orwell.Mixfile do
      {:phoenix_slime, "~> 0.8.0"},
      {:tentacat, "~> 0.5"},
      {:timex, "~> 3.0"},
-     {:exvcr, "~> 0.8", only: :test}]
+     {:guardian, "~> 0.14.0"},
+     {:ueberauth, "~> 0.4"},
+     {:ueberauth_github, "~> 0.4.0"},
+     {:phoenix_slime, "~> 0.8.0"},
+     {:tentacat, "~> 0.5"},
+
+     {:exvcr, "~> 0.8", only: :test},
+     {:ex_machina, "~> 2.0", only: :test}
+    ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

@@ -6,3 +6,5 @@ cp config/env.secret.exs.sample config/$env.secret.exs
 
 MIX_ENV=$env mix ecto.create
 MIX_ENV=$env mix ecto.migrate
+
+cd assets && yarn

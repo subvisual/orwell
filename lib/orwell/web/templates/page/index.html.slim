@@ -1,0 +1,4 @@
+= if @conn.assigns[:user] do
+  = button("Logout", to: "/auth", method: "delete", class: "btn btn-info")
+- else
+  = button("Login with GitHub", to: "/auth/github", method: "get", class: "btn btn-info")

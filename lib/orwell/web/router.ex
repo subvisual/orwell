@@ -25,6 +25,7 @@ defmodule Orwell.Web.Router do
 
     resources "/posts", PostController, only: [:new, :create]
 
+    delete "/auth", AuthController, :delete
     get "/auth/:provider", AuthController, :request
     get "/auth/:provider/callback", AuthController, :callback
   end

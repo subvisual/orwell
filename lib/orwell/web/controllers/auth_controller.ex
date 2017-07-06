@@ -4,6 +4,18 @@ defmodule Orwell.Web.AuthController do
   plug Ueberauth
 
   alias Orwell.Session
+  alias Ueberauth.Strategy.Helpers, as: AuthHelpers
+
+  def delete(conn, _params) do
+    conn
+    |> Guardian.Plug.sign_out
+    |> put_flash(:info, "Logged out")
+    |> redirect(to: "/")
+  end
+
+  def request(conn, _params) do
+    redirect conn, external: AuthHelpers.callback_url(conn)
+  end
 
   def callback(
     %{assigns: %{ueberauth_auth: auth}} = conn,

@@ -12,19 +12,19 @@
       "url": "https://api.github.com/repos/subvisual/blog/git/refs/heads/master"
     },
     "response": {
-      "body": "{\"ref\":\"refs/heads/master\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/refs/heads/master\",\"object\":{\"sha\":\"e83fb5617acfb9d1235f27917f3b0587d8baeba5\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/commits/e83fb5617acfb9d1235f27917f3b0587d8baeba5\"}}",
+      "body": "{\"ref\":\"refs/heads/master\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/refs/heads/master\",\"object\":{\"sha\":\"3aaef8933e5e462c2f486a6c4a8048c1df513b6e\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/commits/3aaef8933e5e462c2f486a6c4a8048c1df513b6e\"}}",
       "headers": {
         "Server": "GitHub.com",
-        "Date": "Wed, 14 Jun 2017 22:22:55 GMT",
+        "Date": "Thu, 06 Jul 2017 13:03:56 GMT",
         "Content-Type": "application/json; charset=utf-8",
         "Content-Length": "282",
         "Status": "200 OK",
         "X-RateLimit-Limit": "5000",
-        "X-RateLimit-Remaining": "4663",
-        "X-RateLimit-Reset": "1497480015",
+        "X-RateLimit-Remaining": "4949",
+        "X-RateLimit-Reset": "1499346522",
         "Cache-Control": "private, max-age=60, s-maxage=60",
         "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
-        "ETag": "\"efe7aecdc34485a04f6a3ba892b28a32\"",
+        "ETag": "\"06395e2f421392a9b17acef2c824256a\"",
         "Last-Modified": "Fri, 17 Mar 2017 19:36:28 GMT",
         "X-Poll-Interval": "300",
         "X-OAuth-Scopes": "repo",
@@ -37,9 +37,9 @@
         "X-Content-Type-Options": "nosniff",
         "X-Frame-Options": "deny",
         "X-XSS-Protection": "1; mode=block",
-        "X-Runtime-rack": "0.036408",
-        "X-Served-By": "a6882e5cd2513376cb9481dbcd83f3a2",
-        "X-GitHub-Request-Id": "EEB6:5560:14AC7E:17F5CC:5941B73F"
+        "X-Runtime-rack": "0.084813",
+        "X-Served-By": "a7f8a126c9ed3f1c4715a34c0ddc7290",
+        "X-GitHub-Request-Id": "D998:7CB5:E5FE57:11507E0:595E353C"
       },
       "status_code": 200,
       "type": "ok"
@@ -47,7 +47,7 @@
   },
   {
     "request": {
-      "body": "{\"ref\":\"refs/heads/hello.txt\",\"sha\":\"e83fb5617acfb9d1235f27917f3b0587d8baeba5\"}",
+      "body": "{\"ref\":\"refs/heads/hello.txt\",\"sha\":\"3aaef8933e5e462c2f486a6c4a8048c1df513b6e\"}",
       "headers": {
         "User-agent": "tentacat",
         "Authorization": "***"
@@ -58,19 +58,19 @@
       "url": "https://api.github.com/repos/subvisual/blog/git/refs"
     },
     "response": {
-      "body": "{\"ref\":\"refs/heads/hello.txt\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/refs/heads/hello.txt\",\"object\":{\"sha\":\"e83fb5617acfb9d1235f27917f3b0587d8baeba5\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/commits/e83fb5617acfb9d1235f27917f3b0587d8baeba5\"}}",
+      "body": "{\"ref\":\"refs/heads/hello.txt\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/refs/heads/hello.txt\",\"object\":{\"sha\":\"3aaef8933e5e462c2f486a6c4a8048c1df513b6e\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/commits/3aaef8933e5e462c2f486a6c4a8048c1df513b6e\"}}",
       "headers": {
         "Server": "GitHub.com",
-        "Date": "Wed, 14 Jun 2017 22:22:56 GMT",
+        "Date": "Thu, 06 Jul 2017 13:03:57 GMT",
         "Content-Type": "application/json; charset=utf-8",
         "Content-Length": "288",
         "Status": "201 Created",
         "X-RateLimit-Limit": "5000",
-        "X-RateLimit-Remaining": "4662",
-        "X-RateLimit-Reset": "1497480015",
+        "X-RateLimit-Remaining": "4948",
+        "X-RateLimit-Reset": "1499346522",
         "Cache-Control": "private, max-age=60, s-maxage=60",
         "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
-        "ETag": "\"3efa8914913ef446a7187ee3044953f4\"",
+        "ETag": "\"6d22eeedeb2b1972e7d6443f6b5ddb99\"",
         "X-OAuth-Scopes": "repo",
         "X-Accepted-OAuth-Scopes": "",
         "Location": "https://api.github.com/repos/subvisual/blog/git/refs/heads/hello.txt",
@@ -82,11 +82,42 @@
         "X-Content-Type-Options": "nosniff",
         "X-Frame-Options": "deny",
         "X-XSS-Protection": "1; mode=block",
-        "X-Runtime-rack": "0.456202",
-        "X-Served-By": "139317cebd6caf9cd03889139437f00b",
-        "X-GitHub-Request-Id": "EEB6:5560:14ACBB:17F60A:5941B73F"
+        "X-Runtime-rack": "0.458308",
+        "X-Served-By": "769054b6618fd34f3638f01469b229db",
+        "X-GitHub-Request-Id": "D998:7CB5:E5FE9E:1150834:595E353C"
       },
       "status_code": 201,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "head",
+      "options": [],
+      "request_body": "",
+      "url": "https://www.iana.org/time-zones/repository/tzdata-latest.tar.gz"
+    },
+    "response": {
+      "body": null,
+      "headers": {
+        "Date": "Thu, 06 Jul 2017 13:00:16 GMT",
+        "Expires": "Thu, 06 Jul 2017 14:00:16 GMT",
+        "Cache-Control": "public, s-maxage=600, max-age=3600",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Content-Security-Policy": "upgrade-insecure-requests",
+        "Last-Modified": "Mon, 20 Mar 2017 18:53:44 GMT",
+        "Vary": "Accept-Encoding",
+        "content-type": "application/x-gzip",
+        "content-encoding": "identity",
+        "Server": "Apache",
+        "Strict-Transport-Security": "max-age=47304003; preload",
+        "X-Cache-Hits": "21",
+        "Accept-Ranges": "bytes",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
       "type": "ok"
     }
   },
@@ -100,22 +131,22 @@
       "method": "put",
       "options": [],
       "request_body": "",
-      "url": "https://api.github.com/repos/subvisual/blog/contents/pages/posts/2017/06-june/hello.txt"
+      "url": "https://api.github.com/repos/subvisual/blog/contents/pages/posts/2017/07-july/hello.txt"
     },
     "response": {
-      "body": "{\"content\":{\"name\":\"hello.txt\",\"path\":\"pages/posts/2017/06-june/hello.txt\",\"sha\":\"04fea06420ca60892f73becee3614f6d023a4b7f\",\"size\":5,\"url\":\"https://api.github.com/repos/subvisual/blog/contents/pages/posts/2017/06-june/hello.txt?ref=hello.txt\",\"html_url\":\"https://github.com/subvisual/blog/blob/hello.txt/pages/posts/2017/06-june/hello.txt\",\"git_url\":\"https://api.github.com/repos/subvisual/blog/git/blobs/04fea06420ca60892f73becee3614f6d023a4b7f\",\"download_url\":\"https://raw.githubusercontent.com/subvisual/blog/hello.txt/pages/posts/2017/06-june/hello.txt\",\"type\":\"file\",\"_links\":{\"self\":\"https://api.github.com/repos/subvisual/blog/contents/pages/posts/2017/06-june/hello.txt?ref=hello.txt\",\"git\":\"https://api.github.com/repos/subvisual/blog/git/blobs/04fea06420ca60892f73becee3614f6d023a4b7f\",\"html\":\"https://github.com/subvisual/blog/blob/hello.txt/pages/posts/2017/06-june/hello.txt\"}},\"commit\":{\"sha\":\"371ad3099f478f77346e2dff00357eb528bba3c3\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/commits/371ad3099f478f77346e2dff00357eb528bba3c3\",\"html_url\":\"https://github.com/subvisual/blog/commit/371ad3099f478f77346e2dff00357eb528bba3c3\",\"author\":{\"name\":\"Fernando Mendes\",\"email\":\"devfrmendes@gmail.com\",\"date\":\"2017-06-14T22:22:56Z\"},\"committer\":{\"name\":\"Fernando Mendes\",\"email\":\"devfrmendes@gmail.com\",\"date\":\"2017-06-14T22:22:56Z\"},\"tree\":{\"sha\":\"e375b4a1b8c8de3ed99efb07100c164e604d3110\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/trees/e375b4a1b8c8de3ed99efb07100c164e604d3110\"},\"message\":\"Adds hello.txt\",\"parents\":[{\"sha\":\"e83fb5617acfb9d1235f27917f3b0587d8baeba5\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/commits/e83fb5617acfb9d1235f27917f3b0587d8baeba5\",\"html_url\":\"https://github.com/subvisual/blog/commit/e83fb5617acfb9d1235f27917f3b0587d8baeba5\"}]}}",
+      "body": "{\"content\":{\"name\":\"hello.txt\",\"path\":\"pages/posts/2017/07-july/hello.txt\",\"sha\":\"04fea06420ca60892f73becee3614f6d023a4b7f\",\"size\":5,\"url\":\"https://api.github.com/repos/subvisual/blog/contents/pages/posts/2017/07-july/hello.txt?ref=hello.txt\",\"html_url\":\"https://github.com/subvisual/blog/blob/hello.txt/pages/posts/2017/07-july/hello.txt\",\"git_url\":\"https://api.github.com/repos/subvisual/blog/git/blobs/04fea06420ca60892f73becee3614f6d023a4b7f\",\"download_url\":\"https://raw.githubusercontent.com/subvisual/blog/hello.txt/pages/posts/2017/07-july/hello.txt\",\"type\":\"file\",\"_links\":{\"self\":\"https://api.github.com/repos/subvisual/blog/contents/pages/posts/2017/07-july/hello.txt?ref=hello.txt\",\"git\":\"https://api.github.com/repos/subvisual/blog/git/blobs/04fea06420ca60892f73becee3614f6d023a4b7f\",\"html\":\"https://github.com/subvisual/blog/blob/hello.txt/pages/posts/2017/07-july/hello.txt\"}},\"commit\":{\"sha\":\"71eb94bb070c8ae2f74402f94b762d44248061c2\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/commits/71eb94bb070c8ae2f74402f94b762d44248061c2\",\"html_url\":\"https://github.com/subvisual/blog/commit/71eb94bb070c8ae2f74402f94b762d44248061c2\",\"author\":{\"name\":\"Fernando Mendes\",\"email\":\"devfrmendes@gmail.com\",\"date\":\"2017-07-06T13:03:57Z\"},\"committer\":{\"name\":\"Fernando Mendes\",\"email\":\"devfrmendes@gmail.com\",\"date\":\"2017-07-06T13:03:57Z\"},\"tree\":{\"sha\":\"04359e6d46f71f8747c903241d2f0a6a59ac9a36\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/trees/04359e6d46f71f8747c903241d2f0a6a59ac9a36\"},\"message\":\"Adds hello.txt\",\"parents\":[{\"sha\":\"3aaef8933e5e462c2f486a6c4a8048c1df513b6e\",\"url\":\"https://api.github.com/repos/subvisual/blog/git/commits/3aaef8933e5e462c2f486a6c4a8048c1df513b6e\",\"html_url\":\"https://github.com/subvisual/blog/commit/3aaef8933e5e462c2f486a6c4a8048c1df513b6e\"}]}}",
       "headers": {
         "Server": "GitHub.com",
-        "Date": "Wed, 14 Jun 2017 22:22:57 GMT",
+        "Date": "Thu, 06 Jul 2017 13:03:58 GMT",
         "Content-Type": "application/json; charset=utf-8",
         "Content-Length": "1801",
         "Status": "201 Created",
         "X-RateLimit-Limit": "5000",
-        "X-RateLimit-Remaining": "4661",
-        "X-RateLimit-Reset": "1497480015",
+        "X-RateLimit-Remaining": "4947",
+        "X-RateLimit-Reset": "1499346522",
         "Cache-Control": "private, max-age=60, s-maxage=60",
         "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
-        "ETag": "\"eedd124d69d88ba6a92451f7bb720acd\"",
+        "ETag": "\"c40a9e5b14969a1fe1c0c7a9f83a6f3f\"",
         "X-OAuth-Scopes": "repo",
         "X-Accepted-OAuth-Scopes": "",
         "X-GitHub-Media-Type": "github.v3; format=json",
@@ -126,9 +157,9 @@
         "X-Content-Type-Options": "nosniff",
         "X-Frame-Options": "deny",
         "X-XSS-Protection": "1; mode=block",
-        "X-Runtime-rack": "0.628030",
-        "X-Served-By": "b535085e7f4d6e3423e016e684de0829",
-        "X-GitHub-Request-Id": "EEB6:5560:14AD7B:17F6C0:5941B740"
+        "X-Runtime-rack": "0.673903",
+        "X-Served-By": "2c18a09f3ac5e4dd1e004af7c5a94769",
+        "X-GitHub-Request-Id": "D998:7CB5:E5FF45:11508EC:595E353D"
       },
       "status_code": 201,
       "type": "ok"

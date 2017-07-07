@@ -1,4 +1,4 @@
 h2 Posts
 = for post <- @posts do
-  = link(post["name"], to: "#")
+  = link(post["name"], to: post_path(@conn, :show, post["id"]))
   br

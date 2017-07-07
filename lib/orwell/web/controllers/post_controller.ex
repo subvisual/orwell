@@ -9,6 +9,24 @@ defmodule Orwell.Web.PostController do
     |> render("new.html")
   end
 
+  def show(conn, %{"id" => id} = _params) do
+    config = conn.assigns[:github_config]
+    resp = id |> Orwell.GitHub.post(config)
+
+    case resp do
+      {:ok, post} ->
+        conn
+        |> assign(:markdown, post)
+        |> render("show.html")
+      {:error, reason} ->
+        conn
+        |> put_status(404)
+        |> put_flash(:error, reason)
+        |> assign(:markdown, "")
+        |> render("show.html")
+    end
+  end
+
   def index(conn, _params) do
     config = conn.assigns[:github_config]
 

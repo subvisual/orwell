@@ -13,6 +13,15 @@ defmodule Orwell.GitHubTest do
     end
   end
 
+  # TODO: Enable the test after post creation is allowed
+  # test "post" do
+  #   use_cassette "github_show_post" do
+  #     config = Orwell.GitHub.Config.new("")
+
+  #     {status, post} = Orwell.GitHub.post()
+  #   end
+  # end
+
   test "commit" do
     use_cassette "github_create_file" do
       config = Orwell.GitHub.Config.new("")

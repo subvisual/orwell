@@ -1,6 +1,20 @@
 defmodule Orwell.GitHub do
   alias Orwell.GitHub
 
+  @spec posts :: {atom, list}
+  def posts do
+    posts =
+      GitHub.Trees.find_recursive("master")
+      |> Access.get("tree")
+      |> Stream.map(& Map.take(&1, ["path", "sha"]))
+      |> Stream.filter(&String.starts_with?(&1["path"], GitHub.Blog.posts_dir()))
+      |> Stream.filter(&String.ends_with?(&1["path"], ".md"))
+      |> Stream.map(& Map.put(&1, "name", GitHub.Blog.titleize(&1["path"])))
+      |> Enum.reverse
+
+    {:ok, posts}
+  end
+
   @spec commit(binary, binary) :: {atom, binary}
   def commit(filename, body) do
     create_branch(filename)

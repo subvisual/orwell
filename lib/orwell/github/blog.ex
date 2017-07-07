@@ -3,16 +3,30 @@ defmodule Orwell.GitHub.Blog do
   A wrapper for the Blog repository configurations.
   """
 
+  @spec titleize(String.t) :: String.t
+  def titleize(filename) do
+    ~r/([a-z]+[\w-]+).md/
+    |> Regex.run(filename, capture: :all_but_first)
+    |> List.first
+    |> String.split("-")
+    |> Stream.map(&String.capitalize/1)
+    |> Enum.join(" ")
+  end
+
   @spec post_path :: String.t
   def post_path do
     [year, month, full_month] = formatted_date()
     formatted_month = "#{month}-#{full_month}"
 
-    Path.join([post_path_prefix(), year, formatted_month])
+    Path.join([posts_dir(), year, formatted_month])
   end
 
   @spec post_path(String.t) :: String.t
   def post_path(filename), do: post_path() |> Path.join(filename)
+
+  @spec posts_dir :: String.t
+  def posts_dir,
+    do: Application.get_env(:orwell, :github_posts_dir)
 
   @spec formatted_date :: String.t
   defp formatted_date do
@@ -21,8 +35,4 @@ defmodule Orwell.GitHub.Blog do
     |> String.split("-")
     |> Enum.map(&String.downcase/1)
   end
-
-  @spec post_path_prefix :: String.t
-  defp post_path_prefix,
-    do: Application.get_env(:orwell, :github_post_path_prefix)
 end

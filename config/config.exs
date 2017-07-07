@@ -10,7 +10,7 @@ config :orwell,
   ecto_repos: [Orwell.Repo],
   github_owner: "subvisual",
   github_repo: "blog",
-  github_post_path_prefix: "pages/posts"
+  github_posts_dir: "pages/posts"
 
 # Configures the endpoint
 config :orwell, Orwell.Web.Endpoint,

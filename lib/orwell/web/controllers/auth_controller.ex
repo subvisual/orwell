@@ -51,4 +51,10 @@ defmodule Orwell.Web.AuthController do
     |> put_change(:github_info, Map.from_struct(info))
     |> Repo.update
   end
+
+  def unauthenticated(conn, _params) do
+    conn
+    |> put_flash(:error, "You need to be authenticated.")
+    |> redirect(to: "/")
+  end
 end

@@ -23,7 +23,7 @@ defmodule Orwell.Web.Router do
 
     get "/", PageController, :index
 
-    resources "/posts", PostController, only: [:new, :create]
+    resources "/posts", PostController, only: [:new, :create, :index]
 
     delete "/auth", AuthController, :delete
     get "/auth/:provider", AuthController, :request

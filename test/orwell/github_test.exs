@@ -5,7 +5,8 @@ defmodule Orwell.GitHubTest do
 
   test "posts" do
     use_cassette "github_list_posts" do
-      {status, posts} = Orwell.GitHub.posts()
+      config = Orwell.GitHub.Config.new("")
+      {status, posts} = Orwell.GitHub.posts(config)
 
       assert status == :ok
       refute Enum.empty?(posts)
@@ -14,7 +15,8 @@ defmodule Orwell.GitHubTest do
 
   test "commit" do
     use_cassette "github_create_file" do
-      {status, _url} = Orwell.GitHub.commit("hello.txt", "world")
+      config = Orwell.GitHub.Config.new("")
+      {status, _url} = Orwell.GitHub.commit("hello.txt", "world", config)
 
       assert status == :ok
     end
@@ -22,9 +24,10 @@ defmodule Orwell.GitHubTest do
 
   test "pull_request" do
     use_cassette "github_create_pr" do
-      Orwell.GitHub.commit("hello.txt", "world")
+      config = Orwell.GitHub.Config.new("")
+      Orwell.GitHub.commit("hello.txt", "world", config)
 
-      {status, _url} = Orwell.GitHub.pull_request("New post", "hello.txt")
+      {status, _url} = Orwell.GitHub.pull_request("New post", "hello.txt", config)
 
       assert status == :ok
     end

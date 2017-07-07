@@ -1,11 +1,18 @@
 defmodule Orwell.GitHub do
   alias Orwell.GitHub
 
-  @spec posts :: {atom, list}
-  def posts do
+  @spec posts(Github.Config.t) :: {atom, any}
+  def posts(config) do
+    GitHub.Trees.find_recursive("master", config) |> traverse_tree
+  end
+
+  @spec traverse_tree({Integer, map}) :: {atom, String.t}
+  defp traverse_tree({_status, %{"message" => reason}}), do: {:error, reason}
+
+  @spec traverse_tree(map) :: {atom, String.t}
+  defp traverse_tree(%{"tree" => tree}) do
     posts =
-      GitHub.Trees.find_recursive("master")
-      |> Access.get("tree")
+      tree
       |> Stream.map(& Map.take(&1, ["path", "sha"]))
       |> Stream.filter(&String.starts_with?(&1["path"], GitHub.Blog.posts_dir()))
       |> Stream.filter(&String.ends_with?(&1["path"], ".md"))
@@ -15,9 +22,9 @@ defmodule Orwell.GitHub do
     {:ok, posts}
   end
 
-  @spec commit(binary, binary) :: {atom, binary}
-  def commit(filename, body) do
-    create_branch(filename)
+  @spec commit(binary, binary, GitHub.Config.t) :: {atom, binary}
+  def commit(filename, body, config) do
+    create_branch(filename, config)
 
     path = filename |> GitHub.Blog.post_path
     body = %{
@@ -26,15 +33,15 @@ defmodule Orwell.GitHub do
       branch: filename,
     }
 
-    {status, response} = GitHub.Contents.create(path, body)
+    {status, response} = GitHub.Contents.create(path, body, config)
     case status do
       201 -> {:ok, response["commit"]["html_url"]}
       _ -> {:error, response["message"]}
     end
   end
 
-  @spec pull_request(binary, binary) :: {atom, binary}
-  def pull_request(title, branch) do
+  @spec pull_request(binary, binary, GitHub.Config.t) :: {atom, binary}
+  def pull_request(title, branch, config) do
     body = %{
       title: title,
       head: branch,
@@ -42,7 +49,7 @@ defmodule Orwell.GitHub do
       maintainer_can_modify: true,
     }
 
-    {status, response} = GitHub.Pulls.create(body)
+    {status, response} = GitHub.Pulls.create(body, config)
 
     case status do
       201 -> {:ok, response["html_url"]}
@@ -50,13 +57,13 @@ defmodule Orwell.GitHub do
     end
   end
 
-  @spec create_branch(binary) :: Integer
-  defp create_branch(name) do
-    master = GitHub.References.find("heads/master")
+  @spec create_branch(binary, Config.t) :: Integer
+  defp create_branch(name, config) do
+    master = GitHub.References.find("heads/master", config)
     ref = "refs/heads/" <> name
 
     %{ref: ref, sha: master["object"]["sha"]}
-    |> GitHub.References.create
+    |> GitHub.References.create(config)
     |> elem(0)
   end
 

@@ -25,6 +25,18 @@ defmodule Orwell.Web do
     end
   end
 
+  def authenticated_controller do
+    quote do
+      use Phoenix.Controller, namespace: Orwell.Web
+      import Plug.Conn
+      import Orwell.Web.Router.Helpers
+      import Orwell.Web.Gettext
+
+      plug Guardian.Plug.EnsureAuthenticated, handler: Orwell.Web.AuthController
+      plug Orwell.Plug.GitHub
+    end
+  end
+
   def view do
     quote do
       use Phoenix.View, root: "lib/orwell/web/templates",

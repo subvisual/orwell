@@ -3,17 +3,16 @@ defmodule Orwell.GitHub.References do
   A wrapper to `Tentacat.References` using our own `Config`
   """
 
+  alias Orwell.GitHub.Config
   alias Tentacat.References
 
-  import Orwell.GitHub.Config
-
-  @spec find(binary) :: Tentacat.response
-  def find(ref) do
-    References.find(owner(), repo(), ref, client())
+  @spec find(binary, Config.t) :: Tentacat.response
+  def find(ref, config) do
+    References.find(config.owner, config.repo, ref, config.client)
   end
 
-  @spec create(list | map) :: Tentacat.response
-  def create(body) do
-    References.create(owner(), repo(), body, client())
+  @spec create(list | map, Config.t) :: Tentacat.response
+  def create(body, config) do
+    References.create(config.owner, config.repo, body, config.client)
   end
 end

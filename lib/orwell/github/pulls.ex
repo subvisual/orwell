@@ -3,12 +3,11 @@ defmodule Orwell.GitHub.Pulls do
   A wrapper to `Tentacat.Pulls` using our own `Config`
   """
 
+  alias Orwell.GitHub.Config
   alias Tentacat.Pulls
 
-  import Orwell.GitHub.Config
-
-  @spec create(list | map) :: Tentacat.response
-  def create(body) do
-    Pulls.create(owner(), repo(), body, client())
+  @spec create(list | map, Config.t) :: Tentacat.response
+  def create(body, config) do
+    Pulls.create(config.owner, config.repo, body, config.client)
   end
 end

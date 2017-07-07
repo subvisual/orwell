@@ -1,5 +1,6 @@
 defmodule Orwell.Web.PostControllerTest do
   use Orwell.Web.ConnCase
+  use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   @valid_post_params [
     title: "A title",
@@ -13,11 +14,13 @@ defmodule Orwell.Web.PostControllerTest do
   @invalid_post_params Keyword.put(@valid_post_params, :title, nil)
 
   test "GET /posts", %{conn: conn} do
-    conn = sign_in conn
-    conn = get conn, post_path(conn, :index)
+    use_cassette "github_list_posts" do
+      conn = sign_in conn
+      conn = get conn, post_path(conn, :index)
 
-    assert html_response(conn, 200)
-    assert conn.assigns[:posts]
+      assert html_response(conn, 200)
+      assert conn.assigns[:posts]
+    end
   end
 
   test "POST /posts with valid post parameters", %{conn: conn} do

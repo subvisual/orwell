@@ -5,15 +5,25 @@ defmodule Orwell.GitHub.Config do
 
   alias Tentacat.Client
 
+  defstruct [:owner, :repo, :client]
+
+  @type t :: %__MODULE__{owner: String.t, repo: String.t, client: Client.t}
+
+  @spec new(String.t) :: t
+  def new(token) do
+    %__MODULE__{
+      owner: owner(),
+      repo: repo(),
+      client: client(token)
+    }
+  end
+
   @spec owner :: String.t
   def owner, do: Application.get_env(:orwell, :github_owner)
 
   @spec repo :: String.t
   def repo, do: Application.get_env(:orwell, :github_repo)
 
-  @spec client :: Client.t
-  def client do
-    token = Application.get_env(:orwell, :github_token)
-    %{access_token: token} |> Client.new
-  end
+  @spec client(String.t) :: Client.t
+  def client(token), do: %{access_token: token} |> Client.new
 end

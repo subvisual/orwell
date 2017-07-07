@@ -1,21 +1,28 @@
 defmodule Orwell.Web.PostController do
-  use Orwell.Web, :controller
+  use Orwell.Web, :authenticated_controller
 
   alias Orwell.Post
 
-  plug Guardian.Plug.EnsureAuthenticated, handler: Orwell.Web.AuthController
+  def new(conn, _params) do
+    conn
+    |> assign(:markdown, "")
+    |> render("new.html")
+  end
 
   def index(conn, _params) do
-    case Orwell.GitHub.posts() do
+    config = conn.assigns[:github_config]
+
+    case Orwell.GitHub.posts(config) do
       {:ok, posts} ->
         conn
         |> assign(:posts, posts)
         |> render("index.html")
-      {:error, _reason} ->
+      {:error, reason} ->
         conn
         |> put_status(500)
-        |> put_flash(:error, "Something went wrong")
-        |> render("/")
+        |> put_flash(:error, reason)
+        |> assign(:posts, [])
+        |> render("index.html")
     end
   end
 

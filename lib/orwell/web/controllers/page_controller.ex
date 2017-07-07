@@ -4,8 +4,10 @@ defmodule Orwell.Web.PageController do
   def index(conn, _params) do
     user = Guardian.Plug.current_resource(conn)
 
-    conn
-    |> assign(:user, user)
-    |> render("index.html")
+    if user do
+      redirect conn, to: post_path(conn, :index)
+    else
+      render(conn, "index.html")
+    end
   end
 end

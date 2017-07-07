@@ -5,12 +5,6 @@ defmodule Orwell.Web.PostController do
 
   plug Guardian.Plug.EnsureAuthenticated, handler: Orwell.Web.AuthController
 
-  def new(conn, _params) do
-    conn
-    |> assign(:markdown, "")
-    |> render("new.html")
-  end
-
   def index(conn, _params) do
     case Orwell.GitHub.posts() do
       {:ok, posts} ->
@@ -25,11 +19,28 @@ defmodule Orwell.Web.PostController do
     end
   end
 
-  def create(conn, %{"post" => %{"title" => title, "body" => body}}) do
-    md = Post.new(title, body) |> Post.full_file
+  def new(conn, _params) do
+    post = Post.new()
 
     conn
-    |> assign(:markdown, md)
+    |> assign(:post, post)
     |> render("new.html")
+  end
+
+  def create(conn, %{"post" => post_params}) do
+    post = Post.from_params(post_params)
+
+    if Post.valid?(post) do
+      conn
+      |> put_flash(:info, "Post is valid, unfortunately, our code monkeys haven't implemented this feature yet. Tough luck")
+      |> assign(:post, post)
+      |> render("new.html")
+    else
+
+      conn
+      |> put_flash(:error, "Whoops. You messed something up.")
+      |> assign(:post, post)
+      |> render("new.html")
+    end
   end
 end

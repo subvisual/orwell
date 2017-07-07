@@ -39,6 +39,10 @@ defmodule Orwell.Web do
       import Orwell.Web.Router.Helpers
       import Orwell.Web.ErrorHelpers
       import Orwell.Web.Gettext
+
+      def current_user(conn) do
+        Guardian.Plug.current_resource(conn)
+      end
     end
   end
 

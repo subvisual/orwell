@@ -1,12 +1,26 @@
-= form_for @conn, post_path(@conn, :create), [as: :post], fn f ->
-  div
+= form_for @post, post_path(@conn, :create), [as: :post], fn f ->
+  .form-group
     label Title
-    = text_input f, :title
+    = text_input f, :title, class: "form-control"
 
-  div
+  .form-group
+    label Cover URL (regular)
+    = text_input f, :cover_url, class: "form-control"
+
+  .form-group
+    label Cover URL (retina)
+    = text_input f, :retina_cover_url, class: "form-control"
+
+  .form-group
+    label Tags
+    = text_input f, :tags, class: "form-control"
+
+  .form-group
+    label Intro
+    = text_input f, :intro, class: "form-control"
+
+  .form-group
     label Body
-    = textarea f, :body
+    = textarea f, :body, class: "form-control", rows: 50
 
-  = submit "Submit"
-
-div = @markdown
+  = submit "Submit", class: "btn btn-primary"

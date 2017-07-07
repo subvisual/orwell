@@ -15,12 +15,15 @@
     <div class="container">
       <header class="header">
         <h1>Orwell</h1>
+        <nav>
+          <%= render Orwell.Web.LayoutView, "session.html", assigns %>
+          <%= link "New post", to: post_path(@conn, :new), class: "btn btn-info" %>
+        </nav>
       </header>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
       <main role="main">
+        <%= render Orwell.Web.LayoutView, "flashes.html", assigns %>
         <%= render @view_module, @view_template, assigns %>
       </main>
 

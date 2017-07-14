@@ -34,8 +34,10 @@ defmodule Orwell.Web.PostController do
     |> render("new.html")
   end
 
-  def create(conn, %{"post" => post_params}) do
-    post = Post.from_params(post_params)
+  def create(conn, %{"post" => post_form_params}) do
+    post = post_form_params
+           |> Map.merge(generated_post_params())
+           |> Post.from_params
 
     if Post.valid?(post) do
       conn
@@ -49,5 +51,15 @@ defmodule Orwell.Web.PostController do
       |> assign(:post, post)
       |> render("new.html")
     end
+  end
+
+  defp generated_post_params do
+    {:ok, posts} = Orwell.GitHub.posts()
+
+    current_max_id = posts
+         |> Stream.map(&Map.get(&1, "id"))
+         |> Enum.max
+
+    %{"id" => current_max_id + 1}
   end
 end

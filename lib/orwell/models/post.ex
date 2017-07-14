@@ -1,5 +1,5 @@
 defmodule Orwell.Post do
-  defstruct id: :new, title: nil, body: nil, cover_url: nil, retina_cover_url: nil, tags: nil, intro: nil
+  defstruct id: nil, title: nil, body: nil, cover_url: nil, retina_cover_url: nil, tags: nil, intro: nil
 
   @type t :: %__MODULE__{
     id: integer,
@@ -12,15 +12,14 @@ defmodule Orwell.Post do
   }
 
   use Vex.Struct
-  validates :id, [presence: true]
-  validates :title, [presence: true]
-  validates :body, [presence: true]
-  validates :cover_url, [presence: true]
-  validates :retina_cover_url, [presence: true]
-  validates :intro, [presence: true]
-  validates :tags, [format: ~r/^\w+(\s*,\s*\w+)*$/]
+  validates :id, by: &is_integer/1
+  validates :title, presence: true
+  validates :body, presence: true
+  validates :cover_url, presence: true
+  validates :retina_cover_url, presence: true
+  validates :intro, presence: true
+  validates :tags, format: ~r/^\w+(\s*,\s*\w+)*$/
 
-  def valid?(post), do: Vex.valid?(post)
   def errors(post), do: Vex.errors(post)
 
   @spec new() :: t

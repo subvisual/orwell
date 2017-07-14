@@ -17,4 +17,10 @@ defmodule Orwell.GitHub.BlogTest do
 
     assert Regex.match?(regex, GitHub.Blog.post_path(file))
   end
+
+  test "post_id/1" do
+    post_path = "pages/posts/2017/06-june/062-the-brown-fox-jumps-over-the-lazy-dog.md"
+
+    assert GitHub.Blog.post_id(post_path) == 62
+  end
 end

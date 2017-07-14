@@ -17,6 +17,7 @@ defmodule Orwell.GitHub do
       |> Stream.filter(&String.starts_with?(&1["path"], GitHub.Blog.posts_dir()))
       |> Stream.filter(&String.ends_with?(&1["path"], ".md"))
       |> Stream.map(& Map.put(&1, "name", GitHub.Blog.titleize(&1["path"])))
+      |> Stream.map(& Map.put(&1, "id", GitHub.Blog.post_id(&1["path"])))
       |> Enum.reverse
 
     {:ok, posts}

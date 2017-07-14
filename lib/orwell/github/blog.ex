@@ -3,9 +3,11 @@ defmodule Orwell.GitHub.Blog do
   A wrapper for the Blog repository configurations.
   """
 
+  @post_title_regex ~r/([a-z]+[\w-]+).md/
+
   @spec titleize(String.t) :: String.t
   def titleize(filename) do
-    ~r/([a-z]+[\w-]+).md/
+    @post_title_regex
     |> Regex.run(filename, capture: :all_but_first)
     |> List.first
     |> String.split("-")
@@ -27,6 +29,21 @@ defmodule Orwell.GitHub.Blog do
   @spec posts_dir :: String.t
   def posts_dir,
     do: Application.get_env(:orwell, :github_posts_dir)
+
+  @post_id_regex ~r|/(?<id>[0-9]+)[^/]*$|
+
+  @spec post_id(String.t) :: String.t
+  def post_id(path) do
+    case Regex.named_captures(@post_id_regex, path) do
+      %{"id" => id} ->
+        id
+        |> Integer.parse
+        |> elem(0)
+      _ ->
+        IO.puts "Well, fuck me dead! I tried to figure out the post id for \"#{path}\", but wasn't able to. Did the devs mess up my RegEx? I blame @fribmendes! BLOOP BLEEP"
+        nil
+    end
+  end
 
   @spec formatted_date :: String.t
   defp formatted_date do

@@ -35,8 +35,10 @@ defmodule Orwell.Web.PostController do
   end
 
   def create(conn, %{"post" => post_form_params}) do
+    github_config = conn.assigns[:github_config]
+
     post = post_form_params
-           |> Map.merge(generated_post_params())
+           |> Map.merge(generated_post_params(github_config))
            |> Post.from_params
 
     if Post.valid?(post) do
@@ -53,8 +55,8 @@ defmodule Orwell.Web.PostController do
     end
   end
 
-  defp generated_post_params do
-    {:ok, posts} = Orwell.GitHub.posts()
+  defp generated_post_params(github_config) do
+    {:ok, posts} = Orwell.GitHub.posts(github_config)
 
     current_max_id = posts
          |> Stream.map(&Map.get(&1, "id"))

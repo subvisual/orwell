@@ -24,21 +24,15 @@ defmodule Orwell.Web.PostControllerTest do
   end
 
   test "POST /posts with valid post parameters", %{conn: conn} do
-    # TODO: the create action uses the same API endpoint as the index action
-    # to retrieve all posts and calculate the next id.
-    # Change this cassette when actually creating a new post
-    use_cassette "github_list_posts" do
+    use_cassette "github_create_post" do
       conn = sign_in conn
       conn = post conn, post_path(conn, :create), [post: @valid_post_params]
 
-      assert html_response(conn, 200) =~ "Post is valid"
+      assert html_response(conn, 200) =~ "Pull Request created"
     end
   end
 
   test "POST /posts with invalid post parameters", %{conn: conn} do
-    # TODO: the create action uses the same API endpoint as the index action
-    # to retrieve all posts and calculate the next id.
-    # Change this cassette when actually creating a new post
     use_cassette "github_list_posts" do
       conn = sign_in conn
       conn = post conn, post_path(conn, :create), [post: @invalid_post_params]

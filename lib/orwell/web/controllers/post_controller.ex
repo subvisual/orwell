@@ -3,12 +3,6 @@ defmodule Orwell.Web.PostController do
 
   alias Orwell.Post
 
-  def new(conn, _params) do
-    conn
-    |> assign(:markdown, "")
-    |> render("new.html")
-  end
-
   def show(conn, %{"id" => id} = _params) do
     config = conn.assigns[:github_config]
     resp = id |> Orwell.GitHub.post(config)
@@ -60,8 +54,10 @@ defmodule Orwell.Web.PostController do
            |> Post.from_params
 
     if Post.valid?(post) do
+      {:ok, url} = create_post(post, github_config)
+
       conn
-      |> put_flash(:info, "Post is valid, unfortunately, our code monkeys haven't implemented this feature yet. Tough luck")
+      |> put_flash(:info, "Pull Request created! Check it at: #{url}")
       |> assign(:post, post)
       |> render("new.html")
     else
@@ -81,5 +77,11 @@ defmodule Orwell.Web.PostController do
          |> Enum.max
 
     %{"id" => current_max_id + 1}
+  end
+
+  defp create_post(post, config) do
+    filename = Orwell.GitHub.Blog.to_filename(post.id, post.title)
+    {:ok, _url} = Orwell.GitHub.commit(filename, post.body, config)
+    Orwell.GitHub.pull_request(post.title, filename, config)
   end
 end

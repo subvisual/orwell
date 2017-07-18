@@ -15,6 +15,15 @@ defmodule Orwell.GitHub.Blog do
     |> Enum.join(" ")
   end
 
+  @spec to_filename(Integer, String.t) :: String.t
+  def to_filename(id, title) do
+    [id, title]
+    |> Enum.join("-")
+    |> String.downcase
+    |> String.replace(" ", "-")
+    |> String.replace_suffix("", ".md")
+  end
+
   @spec post_path :: String.t
   def post_path do
     [year, month, full_month] = formatted_date()

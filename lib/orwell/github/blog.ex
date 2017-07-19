@@ -15,8 +15,8 @@ defmodule Orwell.GitHub.Blog do
     |> Enum.join(" ")
   end
 
-  @spec to_filename(Integer, String.t) :: String.t
-  def to_filename(id, title) do
+  @spec to_filename(String.t, Integer) :: String.t
+  def to_filename(title, id) do
     [id, title]
     |> Enum.join("-")
     |> String.downcase
@@ -35,9 +35,16 @@ defmodule Orwell.GitHub.Blog do
   @spec post_path(String.t) :: String.t
   def post_path(filename), do: post_path() |> Path.join(filename)
 
+  @spec post_url(String.t) :: String.t
+  def post_url(filename), do: post_base_url() |> Path.join(filename)
+
   @spec posts_dir :: String.t
   def posts_dir,
     do: Application.get_env(:orwell, :github_posts_dir)
+
+  @spec post_base_url :: String.t
+  def post_base_url,
+    do: Application.get_env(:orwell, :post_base_url)
 
   @post_id_regex ~r|/(?<id>[0-9]+)[^/]*$|
 

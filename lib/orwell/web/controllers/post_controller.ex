@@ -47,10 +47,19 @@ defmodule Orwell.Web.PostController do
   end
 
   def create(conn, %{"post" => post_form_params}) do
+    current_user = Guardian.Plug.current_resource(conn)
     github_config = conn.assigns[:github_config]
+    id = next_post_id(github_config)
+    path =
+      post_form_params["title"]
+      |> Orwell.GitHub.Blog.to_filename(id)
+      |> Orwell.GitHub.Blog.post_url
 
     post = post_form_params
-           |> Map.merge(generated_post_params(github_config))
+           |> Map.put("id", id)
+           |> Map.put("author", current_user.github_uid)
+           |> Map.put("date", Post.formatted_utc_today())
+           |> Map.put("path", path)
            |> Post.from_params
 
     if Post.valid?(post) do
@@ -69,19 +78,22 @@ defmodule Orwell.Web.PostController do
     end
   end
 
-  defp generated_post_params(github_config) do
+  defp next_post_id(github_config) do
     {:ok, posts} = Orwell.GitHub.posts(github_config)
 
     current_max_id = posts
          |> Stream.map(&Map.get(&1, "id"))
          |> Enum.max
 
-    %{"id" => current_max_id + 1}
+    current_max_id + 1
   end
 
   defp create_post(post, config) do
-    filename = Orwell.GitHub.Blog.to_filename(post.id, post.title)
-    {:ok, _url} = Orwell.GitHub.commit(filename, post.body, config)
+    filename = Orwell.GitHub.Blog.to_filename(post.title, post.id)
+    full_file = Post.full_file(post)
+
+    {:ok, _url} = Orwell.GitHub.commit(filename, full_file, config)
+
     Orwell.GitHub.pull_request(post.title, filename, config)
   end
 end

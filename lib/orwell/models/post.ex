@@ -72,7 +72,7 @@ defmodule Orwell.Post do
     cover: #{cover_url}
     retina_cover: #{retina_cover_url}
     tags:
-    #{tags |> String.split(",") |> yaml_list}
+    #{tags |> String.split(",") |> Enum.map(&String.trim/1) |> yaml_list}
     intro: "#{intro}"
     ---
     """

@@ -40,7 +40,7 @@ defmodule Orwell.Web.ConnCase do
         |> Plug.Conn.fetch_session
       end
 
-      def sign_in(conn, resource \\ %Orwell.User{}, perms \\ %{}) do
+      def sign_in(conn, resource \\ %Orwell.User{github_uid: "orwell"}, perms \\ %{}) do
         conn
         |> conn_with_fetched_session
         |> Guardian.Plug.sign_in(resource, :access, perms: perms)

@@ -24,4 +24,10 @@ config :exvcr, [
   filter_request_headers: ["Authorization"]
 ]
 
+config :orwell,
+  github_owner: "subvisual",
+  github_repo: "blog-test",
+  github_post_path_prefix: "pages/posts",
+  post_base_url: "/posts"
+
 import_config "test.secret.exs"

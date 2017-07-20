@@ -36,6 +36,10 @@ config :orwell,
   github_post_path_prefix: "pages/posts",
   post_base_url: "/posts"
 
+config :ueberauth, Ueberauth.Strategy.Github.OAuth,
+  client_id: System.get_env("GITHUB_CLIENT_ID"),
+  client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

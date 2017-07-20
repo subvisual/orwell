@@ -59,8 +59,6 @@ config :orwell, Orwell.Repo,
 
 config :orwell,
   github_owner: "subvisual",
-  github_repo: "blog-test",
-  github_post_path_prefix: "pages/posts",
-  post_base_url: "/posts"
+  github_repo: "blog-test"
 
 import_config "dev.secret.exs"

@@ -57,8 +57,4 @@ config :orwell, Orwell.Repo,
   hostname: "localhost",
   pool_size: 10
 
-config :orwell,
-  github_owner: "subvisual",
-  github_repo: "blog-test"
-
 import_config "dev.secret.exs"

@@ -44,12 +44,6 @@ config :guardian, Guardian,
   secret_key: "gl8GzW9Z7lHgWQoMEyIX2OvwPCqfKP1ldLhGrnku6M/pT9Hei2YQxCyOfy/YCcQU",
   serializer: Orwell.GuardianSerializer
 
-config :orwell,
-  github_owner: System.get_env("GITHUB_OWNER"),
-  github_repo: System.get_env("GITHUB_REPO"),
-  github_post_path_prefix: "pages/posts",
-  post_base_url: "/posts"
-
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

@@ -24,8 +24,4 @@ config :exvcr, [
   filter_request_headers: ["Authorization"]
 ]
 
-config :orwell,
-  github_owner: "subvisual",
-  github_repo: "blog-test"
-
 import_config "test.secret.exs"

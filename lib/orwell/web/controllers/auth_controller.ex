@@ -25,10 +25,11 @@ defmodule Orwell.Web.AuthController do
     case Session.find_for_github(auth) do
       {:ok, user} ->
         {:ok, updated_user} = update_user(user, auth)
+        name = updated_user.name || updated_user.github_uid
 
         conn
         |> Guardian.Plug.sign_in(updated_user, :access)
-        |> put_flash(:info, "Welcome " <> updated_user.name)
+        |> put_flash(:info, "Welcome " <> name)
         |> redirect(to: "/")
 
       {:error, msg} ->

@@ -57,4 +57,10 @@ config :orwell, Orwell.Repo,
   hostname: "localhost",
   pool_size: 10
 
+config :orwell,
+  github_owner: System.get_env("GITHUB_OWNER") || "subvisual",
+  github_repo: System.get_env("GITHUB_REPO") || "blog-test",
+  github_post_path_prefix: "pages/posts/",
+  post_base_url: "/posts"
+
 import_config "dev.secret.exs"

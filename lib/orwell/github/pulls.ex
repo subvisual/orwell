@@ -10,4 +10,9 @@ defmodule Orwell.GitHub.Pulls do
   def create(body, config) do
     Pulls.create(config.owner, config.repo, body, config.client)
   end
+
+  @spec list(Config.t) :: Tentacat.response
+  def list(config) do
+    Pulls.list(config.owner, config.repo, config.client)
+  end
 end

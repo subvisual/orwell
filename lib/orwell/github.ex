@@ -49,6 +49,45 @@ defmodule Orwell.GitHub do
     end
   end
 
+  @spec pull_requests(GitHub.Config.t) :: {atom, binary}
+  def pull_requests(config) do
+    case GitHub.Pulls.list(config) do
+      {_status, %{"message" => reason}} -> {:error, reason}
+      pulls -> {:ok, pulls}
+    end
+  end
+
+  @spec next_post_id(GitHub.Config.t) :: Integer
+  def next_post_id(config) do
+    ids = post_ids(config) ++ pull_request_ids(config)
+
+    if Enum.empty?(ids) do
+      1
+    else
+      Enum.max(ids) + 1
+    end
+  end
+
+  @spec post_ids(GitHub.Config.t) :: [Integer]
+  defp post_ids(config) do
+    {:ok, posts} = Orwell.GitHub.posts(config)
+
+    Enum.map(posts, &Map.get(&1, "id"))
+  end
+
+  @spec pull_request_ids(GitHub.Config.t) :: [Integer]
+  defp pull_request_ids(config) do
+    {:ok, prs} = Orwell.GitHub.pull_requests(config)
+
+    prs
+    |> Stream.map(&Map.get(&1, "head"))
+    |> Stream.map(&Map.get(&1, "ref"))
+    |> Stream.filter(&(&1 =~ ~r/^\d+-.*\.md$/))
+    |> Stream.map(&String.split(&1, "-"))
+    |> Stream.map(&List.first/1)
+    |> Enum.map(&String.to_integer/1)
+  end
+
   @spec find_post(binary, List, Config.t) :: {atom, binary}
   defp find_post(id, posts, config) do
     path =

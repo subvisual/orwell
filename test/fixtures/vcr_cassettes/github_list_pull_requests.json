@@ -1,0 +1,226 @@
+[
+  {
+    "request": {
+      "body": "\"\\\"\\\"\"",
+      "headers": {
+        "User-agent": "tentacat",
+        "Authorization": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/repos/subvisual/blog-test/git/refs/heads/master"
+    },
+    "response": {
+      "body": "{\"ref\":\"refs/heads/master\",\"url\":\"https://api.github.com/repos/subvisual/blog-test/git/refs/heads/master\",\"object\":{\"sha\":\"ee6b0c3a7be751c0746c8ee6c7d6167552ac573c\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/subvisual/blog-test/git/commits/ee6b0c3a7be751c0746c8ee6c7d6167552ac573c\"}}",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Thu, 20 Jul 2017 15:03:05 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "292",
+        "Status": "200 OK",
+        "X-RateLimit-Limit": "5000",
+        "X-RateLimit-Remaining": "4965",
+        "X-RateLimit-Reset": "1500565798",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"a56d4e38802c76764e0272cf0cf6c1ee\"",
+        "Last-Modified": "Wed, 19 Jul 2017 15:36:40 GMT",
+        "X-Poll-Interval": "300",
+        "X-OAuth-Scopes": "repo, user",
+        "X-Accepted-OAuth-Scopes": "",
+        "X-OAuth-Client-Id": "b8932e8cb2e156171f4f",
+        "X-GitHub-Media-Type": "github.v3; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+        "Access-Control-Allow-Origin": "*",
+        "Content-Security-Policy": "default-src 'none'",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "deny",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Runtime-rack": "0.081933",
+        "X-GitHub-Request-Id": "C6F0:14EB:9664:14A52:5970C629"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "{\"ref\":\"refs/heads/hello.txt\",\"sha\":\"ee6b0c3a7be751c0746c8ee6c7d6167552ac573c\"}",
+      "headers": {
+        "User-agent": "tentacat",
+        "Authorization": "***"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/repos/subvisual/blog-test/git/refs"
+    },
+    "response": {
+      "body": "{\"ref\":\"refs/heads/hello.txt\",\"url\":\"https://api.github.com/repos/subvisual/blog-test/git/refs/heads/hello.txt\",\"object\":{\"sha\":\"ee6b0c3a7be751c0746c8ee6c7d6167552ac573c\",\"type\":\"commit\",\"url\":\"https://api.github.com/repos/subvisual/blog-test/git/commits/ee6b0c3a7be751c0746c8ee6c7d6167552ac573c\"}}",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Thu, 20 Jul 2017 15:03:06 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "298",
+        "Status": "201 Created",
+        "X-RateLimit-Limit": "5000",
+        "X-RateLimit-Remaining": "4964",
+        "X-RateLimit-Reset": "1500565798",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"bd4d2800595195f56c5625461ab9f4c2\"",
+        "X-OAuth-Scopes": "repo, user",
+        "X-Accepted-OAuth-Scopes": "",
+        "X-OAuth-Client-Id": "b8932e8cb2e156171f4f",
+        "Location": "https://api.github.com/repos/subvisual/blog-test/git/refs/heads/hello.txt",
+        "X-GitHub-Media-Type": "github.v3; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+        "Access-Control-Allow-Origin": "*",
+        "Content-Security-Policy": "default-src 'none'",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "deny",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Runtime-rack": "0.477509",
+        "X-GitHub-Request-Id": "C6F0:14EB:9694:14ACC:5970C629"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "{\"branch\":\"hello.txt\",\"content\":\"d29ybGQ=\",\"message\":\"Adds hello.txt\"}",
+      "headers": {
+        "User-agent": "tentacat",
+        "Authorization": "***"
+      },
+      "method": "put",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/repos/subvisual/blog-test/contents/pages/posts/2017/07-july/hello.txt"
+    },
+    "response": {
+      "body": "{\"content\":{\"name\":\"hello.txt\",\"path\":\"pages/posts/2017/07-july/hello.txt\",\"sha\":\"04fea06420ca60892f73becee3614f6d023a4b7f\",\"size\":5,\"url\":\"https://api.github.com/repos/subvisual/blog-test/contents/pages/posts/2017/07-july/hello.txt?ref=hello.txt\",\"html_url\":\"https://github.com/subvisual/blog-test/blob/hello.txt/pages/posts/2017/07-july/hello.txt\",\"git_url\":\"https://api.github.com/repos/subvisual/blog-test/git/blobs/04fea06420ca60892f73becee3614f6d023a4b7f\",\"download_url\":\"https://raw.githubusercontent.com/subvisual/blog-test/hello.txt/pages/posts/2017/07-july/hello.txt?token=AEH-o2eO41Nc0QFtqyLZIFRM0qgizvC-ks5ZcMZnwA%3D%3D\",\"type\":\"file\",\"_links\":{\"self\":\"https://api.github.com/repos/subvisual/blog-test/contents/pages/posts/2017/07-july/hello.txt?ref=hello.txt\",\"git\":\"https://api.github.com/repos/subvisual/blog-test/git/blobs/04fea06420ca60892f73becee3614f6d023a4b7f\",\"html\":\"https://github.com/subvisual/blog-test/blob/hello.txt/pages/posts/2017/07-july/hello.txt\"}},\"commit\":{\"sha\":\"291e06ded187bb7f7e3a4cb9dc9d176b99908d03\",\"url\":\"https://api.github.com/repos/subvisual/blog-test/git/commits/291e06ded187bb7f7e3a4cb9dc9d176b99908d03\",\"html_url\":\"https://github.com/subvisual/blog-test/commit/291e06ded187bb7f7e3a4cb9dc9d176b99908d03\",\"author\":{\"name\":\"Fernando Mendes\",\"email\":\"devfrmendes@gmail.com\",\"date\":\"2017-07-20T15:03:06Z\"},\"committer\":{\"name\":\"Fernando Mendes\",\"email\":\"devfrmendes@gmail.com\",\"date\":\"2017-07-20T15:03:06Z\"},\"tree\":{\"sha\":\"3ed75ff97aff156f3afc719c4bb34fc40cc9ae13\",\"url\":\"https://api.github.com/repos/subvisual/blog-test/git/trees/3ed75ff97aff156f3afc719c4bb34fc40cc9ae13\"},\"message\":\"Adds hello.txt\",\"parents\":[{\"sha\":\"ee6b0c3a7be751c0746c8ee6c7d6167552ac573c\",\"url\":\"https://api.github.com/repos/subvisual/blog-test/git/commits/ee6b0c3a7be751c0746c8ee6c7d6167552ac573c\",\"html_url\":\"https://github.com/subvisual/blog-test/commit/ee6b0c3a7be751c0746c8ee6c7d6167552ac573c\"}]}}",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Thu, 20 Jul 2017 15:03:07 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "1916",
+        "Status": "201 Created",
+        "X-RateLimit-Limit": "5000",
+        "X-RateLimit-Remaining": "4963",
+        "X-RateLimit-Reset": "1500565798",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"84da5ed7e956c362c86d57e1f085d355\"",
+        "X-OAuth-Scopes": "repo, user",
+        "X-Accepted-OAuth-Scopes": "",
+        "X-OAuth-Client-Id": "b8932e8cb2e156171f4f",
+        "X-GitHub-Media-Type": "github.v3; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+        "Access-Control-Allow-Origin": "*",
+        "Content-Security-Policy": "default-src 'none'",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "deny",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Runtime-rack": "0.621470",
+        "X-GitHub-Request-Id": "C6F0:14EB:974C:14C2F:5970C62A"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "{\"base\":\"master\",\"head\":\"hello.txt\",\"maintainer_can_modify\":true,\"title\":\"New post\"}",
+      "headers": {
+        "User-agent": "tentacat",
+        "Authorization": "***"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/repos/subvisual/blog-test/pulls"
+    },
+    "response": {
+      "body": "{\"url\":\"https://api.github.com/repos/subvisual/blog-test/pulls/11\",\"id\":131577354,\"html_url\":\"https://github.com/subvisual/blog-test/pull/11\",\"diff_url\":\"https://github.com/subvisual/blog-test/pull/11.diff\",\"patch_url\":\"https://github.com/subvisual/blog-test/pull/11.patch\",\"issue_url\":\"https://api.github.com/repos/subvisual/blog-test/issues/11\",\"number\":11,\"state\":\"open\",\"locked\":false,\"title\":\"New post\",\"user\":{\"login\":\"fribmendes\",\"id\":4325027,\"avatar_url\":\"https://avatars3.githubusercontent.com/u/4325027?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/fribmendes\",\"html_url\":\"https://github.com/fribmendes\",\"followers_url\":\"https://api.github.com/users/fribmendes/followers\",\"following_url\":\"https://api.github.com/users/fribmendes/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/fribmendes/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/fribmendes/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/fribmendes/subscriptions\",\"organizations_url\":\"https://api.github.com/users/fribmendes/orgs\",\"repos_url\":\"https://api.github.com/users/fribmendes/repos\",\"events_url\":\"https://api.github.com/users/fribmendes/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/fribmendes/received_events\",\"type\":\"User\",\"site_admin\":false},\"body\":null,\"created_at\":\"2017-07-20T15:03:07Z\",\"updated_at\":\"2017-07-20T15:03:07Z\",\"closed_at\":null,\"merged_at\":null,\"merge_commit_sha\":null,\"assignee\":null,\"assignees\":[],\"requested_reviewers\":[],\"milestone\":null,\"commits_url\":\"https://api.github.com/repos/subvisual/blog-test/pulls/11/commits\",\"review_comments_url\":\"https://api.github.com/repos/subvisual/blog-test/pulls/11/comments\",\"review_comment_url\":\"https://api.github.com/repos/subvisual/blog-test/pulls/comments{/number}\",\"comments_url\":\"https://api.github.com/repos/subvisual/blog-test/issues/11/comments\",\"statuses_url\":\"https://api.github.com/repos/subvisual/blog-test/statuses/291e06ded187bb7f7e3a4cb9dc9d176b99908d03\",\"head\":{\"label\":\"subvisual:hello.txt\",\"ref\":\"hello.txt\",\"sha\":\"291e06ded187bb7f7e3a4cb9dc9d176b99908d03\",\"user\":{\"login\":\"subvisual\",\"id\":1085467,\"avatar_url\":\"https://avatars1.githubusercontent.com/u/1085467?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/subvisual\",\"html_url\":\"https://github.com/subvisual\",\"followers_url\":\"https://api.github.com/users/subvisual/followers\",\"following_url\":\"https://api.github.com/users/subvisual/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/subvisual/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/subvisual/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/subvisual/subscriptions\",\"organizations_url\":\"https://api.github.com/users/subvisual/orgs\",\"repos_url\":\"https://api.github.com/users/subvisual/repos\",\"events_url\":\"https://api.github.com/users/subvisual/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/subvisual/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"repo\":{\"id\":97733218,\"name\":\"blog-test\",\"full_name\":\"subvisual/blog-test\",\"owner\":{\"login\":\"subvisual\",\"id\":1085467,\"avatar_url\":\"https://avatars1.githubusercontent.com/u/1085467?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/subvisual\",\"html_url\":\"https://github.com/subvisual\",\"followers_url\":\"https://api.github.com/users/subvisual/followers\",\"following_url\":\"https://api.github.com/users/subvisual/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/subvisual/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/subvisual/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/subvisual/subscriptions\",\"organizations_url\":\"https://api.github.com/users/subvisual/orgs\",\"repos_url\":\"https://api.github.com/users/subvisual/repos\",\"events_url\":\"https://api.github.com/users/subvisual/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/subvisual/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"private\":true,\"html_url\":\"https://github.com/subvisual/blog-test\",\"description\":\"Just a repository to test subvisual/orwell and subvisual/blog in.\",\"fork\":false,\"url\":\"https://api.github.com/repos/subvisual/blog-test\",\"forks_url\":\"https://api.github.com/repos/subvisual/blog-test/forks\",\"keys_url\":\"https://api.github.com/repos/subvisual/blog-test/keys{/key_id}\",\"collaborators_url\":\"https://api.github.com/repos/subvisual/blog-test/collaborators{/collaborator}\",\"teams_url\":\"https://api.github.com/repos/subvisual/blog-test/teams\",\"hooks_url\":\"https://api.github.com/repos/subvisual/blog-test/hooks\",\"issue_events_url\":\"https://api.github.com/repos/subvisual/blog-test/issues/events{/number}\",\"events_url\":\"https://api.github.com/repos/subvisual/blog-test/events\",\"assignees_url\":\"https://api.github.com/repos/subvisual/blog-test/assignees{/user}\",\"branches_url\":\"https://api.github.com/repos/subvisual/blog-test/branches{/branch}\",\"tags_url\":\"https://api.github.com/repos/subvisual/blog-test/tags\",\"blobs_url\":\"https://api.github.com/repos/subvisual/blog-test/git/blobs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/subvisual/blog-test/git/tags{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/subvisual/blog-test/git/refs{/sha}\",\"trees_url\":\"https://api.github.com/repos/subvisual/blog-test/git/trees{/sha}\",\"statuses_url\":\"https://api.github.com/repos/subvisual/blog-test/statuses/{sha}\",\"languages_url\":\"https://api.github.com/repos/subvisual/blog-test/languages\",\"stargazers_url\":\"https://api.github.com/repos/subvisual/blog-test/stargazers\",\"contributors_url\":\"https://api.github.com/repos/subvisual/blog-test/contributors\",\"subscribers_url\":\"https://api.github.com/repos/subvisual/blog-test/subscribers\",\"subscription_url\":\"https://api.github.com/repos/subvisual/blog-test/subscription\",\"commits_url\":\"https://api.github.com/repos/subvisual/blog-test/commits{/sha}\",\"git_commits_url\":\"https://api.github.com/repos/subvisual/blog-test/git/commits{/sha}\",\"comments_url\":\"https://api.github.com/repos/subvisual/blog-test/comments{/number}\",\"issue_comment_url\":\"https://api.github.com/repos/subvisual/blog-test/issues/comments{/number}\",\"contents_url\":\"https://api.github.com/repos/subvisual/blog-test/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/subvisual/blog-test/compare/{base}...{head}\",\"merges_url\":\"https://api.github.com/repos/subvisual/blog-test/merges\",\"archive_url\":\"https://api.github.com/repos/subvisual/blog-test/{archive_format}{/ref}\",\"downloads_url\":\"https://api.github.com/repos/subvisual/blog-test/downloads\",\"issues_url\":\"https://api.github.com/repos/subvisual/blog-test/issues{/number}\",\"pulls_url\":\"https://api.github.com/repos/subvisual/blog-test/pulls{/number}\",\"milestones_url\":\"https://api.github.com/repos/subvisual/blog-test/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/subvisual/blog-test/notifications{?since,all,participating}\",\"labels_url\":\"https://api.github.com/repos/subvisual/blog-test/labels{/name}\",\"releases_url\":\"https://api.github.com/repos/subvisual/blog-test/releases{/id}\",\"deployments_url\":\"https://api.github.com/repos/subvisual/blog-test/deployments\",\"created_at\":\"2017-07-19T15:34:48Z\",\"updated_at\":\"2017-07-19T15:36:40Z\",\"pushed_at\":\"2017-07-20T15:03:07Z\",\"git_url\":\"git://github.com/subvisual/blog-test.git\",\"ssh_url\":\"git@github.com:subvisual/blog-test.git\",\"clone_url\":\"https://github.com/subvisual/blog-test.git\",\"svn_url\":\"https://github.com/subvisual/blog-test\",\"homepage\":null,\"size\":1138,\"stargazers_count\":0,\"watchers_count\":0,\"language\":\"CSS\",\"has_issues\":true,\"has_projects\":true,\"has_downloads\":true,\"has_wiki\":true,\"has_pages\":false,\"forks_count\":0,\"mirror_url\":null,\"open_issues_count\":1,\"forks\":0,\"open_issues\":1,\"watchers\":0,\"default_branch\":\"master\"}},\"base\":{\"label\":\"subvisual:master\",\"ref\":\"master\",\"sha\":\"ee6b0c3a7be751c0746c8ee6c7d6167552ac573c\",\"user\":{\"login\":\"subvisual\",\"id\":1085467,\"avatar_url\":\"https://avatars1.githubusercontent.com/u/1085467?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/subvisual\",\"html_url\":\"https://github.com/subvisual\",\"followers_url\":\"https://api.github.com/users/subvisual/followers\",\"following_url\":\"https://api.github.com/users/subvisual/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/subvisual/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/subvisual/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/subvisual/subscriptions\",\"organizations_url\":\"https://api.github.com/users/subvisual/orgs\",\"repos_url\":\"https://api.github.com/users/subvisual/repos\",\"events_url\":\"https://api.github.com/users/subvisual/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/subvisual/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"repo\":{\"id\":97733218,\"name\":\"blog-test\",\"full_name\":\"subvisual/blog-test\",\"owner\":{\"login\":\"subvisual\",\"id\":1085467,\"avatar_url\":\"https://avatars1.githubusercontent.com/u/1085467?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/subvisual\",\"html_url\":\"https://github.com/subvisual\",\"followers_url\":\"https://api.github.com/users/subvisual/followers\",\"following_url\":\"https://api.github.com/users/subvisual/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/subvisual/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/subvisual/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/subvisual/subscriptions\",\"organizations_url\":\"https://api.github.com/users/subvisual/orgs\",\"repos_url\":\"https://api.github.com/users/subvisual/repos\",\"events_url\":\"https://api.github.com/users/subvisual/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/subvisual/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"private\":true,\"html_url\":\"https://github.com/subvisual/blog-test\",\"description\":\"Just a repository to test subvisual/orwell and subvisual/blog in.\",\"fork\":false,\"url\":\"https://api.github.com/repos/subvisual/blog-test\",\"forks_url\":\"https://api.github.com/repos/subvisual/blog-test/forks\",\"keys_url\":\"https://api.github.com/repos/subvisual/blog-test/keys{/key_id}\",\"collaborators_url\":\"https://api.github.com/repos/subvisual/blog-test/collaborators{/collaborator}\",\"teams_url\":\"https://api.github.com/repos/subvisual/blog-test/teams\",\"hooks_url\":\"https://api.github.com/repos/subvisual/blog-test/hooks\",\"issue_events_url\":\"https://api.github.com/repos/subvisual/blog-test/issues/events{/number}\",\"events_url\":\"https://api.github.com/repos/subvisual/blog-test/events\",\"assignees_url\":\"https://api.github.com/repos/subvisual/blog-test/assignees{/user}\",\"branches_url\":\"https://api.github.com/repos/subvisual/blog-test/branches{/branch}\",\"tags_url\":\"https://api.github.com/repos/subvisual/blog-test/tags\",\"blobs_url\":\"https://api.github.com/repos/subvisual/blog-test/git/blobs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/subvisual/blog-test/git/tags{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/subvisual/blog-test/git/refs{/sha}\",\"trees_url\":\"https://api.github.com/repos/subvisual/blog-test/git/trees{/sha}\",\"statuses_url\":\"https://api.github.com/repos/subvisual/blog-test/statuses/{sha}\",\"languages_url\":\"https://api.github.com/repos/subvisual/blog-test/languages\",\"stargazers_url\":\"https://api.github.com/repos/subvisual/blog-test/stargazers\",\"contributors_url\":\"https://api.github.com/repos/subvisual/blog-test/contributors\",\"subscribers_url\":\"https://api.github.com/repos/subvisual/blog-test/subscribers\",\"subscription_url\":\"https://api.github.com/repos/subvisual/blog-test/subscription\",\"commits_url\":\"https://api.github.com/repos/subvisual/blog-test/commits{/sha}\",\"git_commits_url\":\"https://api.github.com/repos/subvisual/blog-test/git/commits{/sha}\",\"comments_url\":\"https://api.github.com/repos/subvisual/blog-test/comments{/number}\",\"issue_comment_url\":\"https://api.github.com/repos/subvisual/blog-test/issues/comments{/number}\",\"contents_url\":\"https://api.github.com/repos/subvisual/blog-test/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/subvisual/blog-test/compare/{base}...{head}\",\"merges_url\":\"https://api.github.com/repos/subvisual/blog-test/merges\",\"archive_url\":\"https://api.github.com/repos/subvisual/blog-test/{archive_format}{/ref}\",\"downloads_url\":\"https://api.github.com/repos/subvisual/blog-test/downloads\",\"issues_url\":\"https://api.github.com/repos/subvisual/blog-test/issues{/number}\",\"pulls_url\":\"https://api.github.com/repos/subvisual/blog-test/pulls{/number}\",\"milestones_url\":\"https://api.github.com/repos/subvisual/blog-test/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/subvisual/blog-test/notifications{?since,all,participating}\",\"labels_url\":\"https://api.github.com/repos/subvisual/blog-test/labels{/name}\",\"releases_url\":\"https://api.github.com/repos/subvisual/blog-test/releases{/id}\",\"deployments_url\":\"https://api.github.com/repos/subvisual/blog-test/deployments\",\"created_at\":\"2017-07-19T15:34:48Z\",\"updated_at\":\"2017-07-19T15:36:40Z\",\"pushed_at\":\"2017-07-20T15:03:07Z\",\"git_url\":\"git://github.com/subvisual/blog-test.git\",\"ssh_url\":\"git@github.com:subvisual/blog-test.git\",\"clone_url\":\"https://github.com/subvisual/blog-test.git\",\"svn_url\":\"https://github.com/subvisual/blog-test\",\"homepage\":null,\"size\":1138,\"stargazers_count\":0,\"watchers_count\":0,\"language\":\"CSS\",\"has_issues\":true,\"has_projects\":true,\"has_downloads\":true,\"has_wiki\":true,\"has_pages\":false,\"forks_count\":0,\"mirror_url\":null,\"open_issues_count\":1,\"forks\":0,\"open_issues\":1,\"watchers\":0,\"default_branch\":\"master\"}},\"_links\":{\"self\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/pulls/11\"},\"html\":{\"href\":\"https://github.com/subvisual/blog-test/pull/11\"},\"issue\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/issues/11\"},\"comments\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/issues/11/comments\"},\"review_comments\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/pulls/11/comments\"},\"review_comment\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/pulls/comments{/number}\"},\"commits\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/pulls/11/commits\"},\"statuses\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/statuses/291e06ded187bb7f7e3a4cb9dc9d176b99908d03\"}},\"merged\":false,\"mergeable\":null,\"rebaseable\":null,\"mergeable_state\":\"unknown\",\"merged_by\":null,\"comments\":0,\"review_comments\":0,\"maintainer_can_modify\":false,\"commits\":1,\"additions\":1,\"deletions\":0,\"changed_files\":1}",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Thu, 20 Jul 2017 15:03:07 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "14449",
+        "Status": "201 Created",
+        "X-RateLimit-Limit": "5000",
+        "X-RateLimit-Remaining": "4962",
+        "X-RateLimit-Reset": "1500565798",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"0721af3847d30cf56ee6555e9fca519f\"",
+        "X-OAuth-Scopes": "repo, user",
+        "X-Accepted-OAuth-Scopes": "",
+        "X-OAuth-Client-Id": "b8932e8cb2e156171f4f",
+        "Location": "https://api.github.com/repos/subvisual/blog-test/pulls/11",
+        "X-GitHub-Media-Type": "github.v3; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+        "Access-Control-Allow-Origin": "*",
+        "Content-Security-Policy": "default-src 'none'",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "deny",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Runtime-rack": "0.420353",
+        "X-GitHub-Request-Id": "C6F0:14EB:9818:14E3F:5970C62B"
+      },
+      "status_code": 201,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "\"\\\"\\\"\"",
+      "headers": {
+        "User-agent": "tentacat",
+        "Authorization": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/repos/subvisual/blog-test/pulls"
+    },
+    "response": {
+      "body": "[{\"url\":\"https://api.github.com/repos/subvisual/blog-test/pulls/11\",\"id\":131577354,\"html_url\":\"https://github.com/subvisual/blog-test/pull/11\",\"diff_url\":\"https://github.com/subvisual/blog-test/pull/11.diff\",\"patch_url\":\"https://github.com/subvisual/blog-test/pull/11.patch\",\"issue_url\":\"https://api.github.com/repos/subvisual/blog-test/issues/11\",\"number\":11,\"state\":\"open\",\"locked\":false,\"title\":\"New post\",\"user\":{\"login\":\"fribmendes\",\"id\":4325027,\"avatar_url\":\"https://avatars3.githubusercontent.com/u/4325027?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/fribmendes\",\"html_url\":\"https://github.com/fribmendes\",\"followers_url\":\"https://api.github.com/users/fribmendes/followers\",\"following_url\":\"https://api.github.com/users/fribmendes/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/fribmendes/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/fribmendes/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/fribmendes/subscriptions\",\"organizations_url\":\"https://api.github.com/users/fribmendes/orgs\",\"repos_url\":\"https://api.github.com/users/fribmendes/repos\",\"events_url\":\"https://api.github.com/users/fribmendes/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/fribmendes/received_events\",\"type\":\"User\",\"site_admin\":false},\"body\":null,\"created_at\":\"2017-07-20T15:03:07Z\",\"updated_at\":\"2017-07-20T15:03:07Z\",\"closed_at\":null,\"merged_at\":null,\"merge_commit_sha\":null,\"assignee\":null,\"assignees\":[],\"requested_reviewers\":[],\"milestone\":null,\"commits_url\":\"https://api.github.com/repos/subvisual/blog-test/pulls/11/commits\",\"review_comments_url\":\"https://api.github.com/repos/subvisual/blog-test/pulls/11/comments\",\"review_comment_url\":\"https://api.github.com/repos/subvisual/blog-test/pulls/comments{/number}\",\"comments_url\":\"https://api.github.com/repos/subvisual/blog-test/issues/11/comments\",\"statuses_url\":\"https://api.github.com/repos/subvisual/blog-test/statuses/291e06ded187bb7f7e3a4cb9dc9d176b99908d03\",\"head\":{\"label\":\"subvisual:hello.txt\",\"ref\":\"hello.txt\",\"sha\":\"291e06ded187bb7f7e3a4cb9dc9d176b99908d03\",\"user\":{\"login\":\"subvisual\",\"id\":1085467,\"avatar_url\":\"https://avatars1.githubusercontent.com/u/1085467?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/subvisual\",\"html_url\":\"https://github.com/subvisual\",\"followers_url\":\"https://api.github.com/users/subvisual/followers\",\"following_url\":\"https://api.github.com/users/subvisual/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/subvisual/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/subvisual/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/subvisual/subscriptions\",\"organizations_url\":\"https://api.github.com/users/subvisual/orgs\",\"repos_url\":\"https://api.github.com/users/subvisual/repos\",\"events_url\":\"https://api.github.com/users/subvisual/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/subvisual/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"repo\":{\"id\":97733218,\"name\":\"blog-test\",\"full_name\":\"subvisual/blog-test\",\"owner\":{\"login\":\"subvisual\",\"id\":1085467,\"avatar_url\":\"https://avatars1.githubusercontent.com/u/1085467?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/subvisual\",\"html_url\":\"https://github.com/subvisual\",\"followers_url\":\"https://api.github.com/users/subvisual/followers\",\"following_url\":\"https://api.github.com/users/subvisual/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/subvisual/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/subvisual/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/subvisual/subscriptions\",\"organizations_url\":\"https://api.github.com/users/subvisual/orgs\",\"repos_url\":\"https://api.github.com/users/subvisual/repos\",\"events_url\":\"https://api.github.com/users/subvisual/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/subvisual/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"private\":true,\"html_url\":\"https://github.com/subvisual/blog-test\",\"description\":\"Just a repository to test subvisual/orwell and subvisual/blog in.\",\"fork\":false,\"url\":\"https://api.github.com/repos/subvisual/blog-test\",\"forks_url\":\"https://api.github.com/repos/subvisual/blog-test/forks\",\"keys_url\":\"https://api.github.com/repos/subvisual/blog-test/keys{/key_id}\",\"collaborators_url\":\"https://api.github.com/repos/subvisual/blog-test/collaborators{/collaborator}\",\"teams_url\":\"https://api.github.com/repos/subvisual/blog-test/teams\",\"hooks_url\":\"https://api.github.com/repos/subvisual/blog-test/hooks\",\"issue_events_url\":\"https://api.github.com/repos/subvisual/blog-test/issues/events{/number}\",\"events_url\":\"https://api.github.com/repos/subvisual/blog-test/events\",\"assignees_url\":\"https://api.github.com/repos/subvisual/blog-test/assignees{/user}\",\"branches_url\":\"https://api.github.com/repos/subvisual/blog-test/branches{/branch}\",\"tags_url\":\"https://api.github.com/repos/subvisual/blog-test/tags\",\"blobs_url\":\"https://api.github.com/repos/subvisual/blog-test/git/blobs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/subvisual/blog-test/git/tags{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/subvisual/blog-test/git/refs{/sha}\",\"trees_url\":\"https://api.github.com/repos/subvisual/blog-test/git/trees{/sha}\",\"statuses_url\":\"https://api.github.com/repos/subvisual/blog-test/statuses/{sha}\",\"languages_url\":\"https://api.github.com/repos/subvisual/blog-test/languages\",\"stargazers_url\":\"https://api.github.com/repos/subvisual/blog-test/stargazers\",\"contributors_url\":\"https://api.github.com/repos/subvisual/blog-test/contributors\",\"subscribers_url\":\"https://api.github.com/repos/subvisual/blog-test/subscribers\",\"subscription_url\":\"https://api.github.com/repos/subvisual/blog-test/subscription\",\"commits_url\":\"https://api.github.com/repos/subvisual/blog-test/commits{/sha}\",\"git_commits_url\":\"https://api.github.com/repos/subvisual/blog-test/git/commits{/sha}\",\"comments_url\":\"https://api.github.com/repos/subvisual/blog-test/comments{/number}\",\"issue_comment_url\":\"https://api.github.com/repos/subvisual/blog-test/issues/comments{/number}\",\"contents_url\":\"https://api.github.com/repos/subvisual/blog-test/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/subvisual/blog-test/compare/{base}...{head}\",\"merges_url\":\"https://api.github.com/repos/subvisual/blog-test/merges\",\"archive_url\":\"https://api.github.com/repos/subvisual/blog-test/{archive_format}{/ref}\",\"downloads_url\":\"https://api.github.com/repos/subvisual/blog-test/downloads\",\"issues_url\":\"https://api.github.com/repos/subvisual/blog-test/issues{/number}\",\"pulls_url\":\"https://api.github.com/repos/subvisual/blog-test/pulls{/number}\",\"milestones_url\":\"https://api.github.com/repos/subvisual/blog-test/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/subvisual/blog-test/notifications{?since,all,participating}\",\"labels_url\":\"https://api.github.com/repos/subvisual/blog-test/labels{/name}\",\"releases_url\":\"https://api.github.com/repos/subvisual/blog-test/releases{/id}\",\"deployments_url\":\"https://api.github.com/repos/subvisual/blog-test/deployments\",\"created_at\":\"2017-07-19T15:34:48Z\",\"updated_at\":\"2017-07-19T15:36:40Z\",\"pushed_at\":\"2017-07-20T15:03:08Z\",\"git_url\":\"git://github.com/subvisual/blog-test.git\",\"ssh_url\":\"git@github.com:subvisual/blog-test.git\",\"clone_url\":\"https://github.com/subvisual/blog-test.git\",\"svn_url\":\"https://github.com/subvisual/blog-test\",\"homepage\":null,\"size\":1138,\"stargazers_count\":0,\"watchers_count\":0,\"language\":\"CSS\",\"has_issues\":true,\"has_projects\":true,\"has_downloads\":true,\"has_wiki\":true,\"has_pages\":false,\"forks_count\":0,\"mirror_url\":null,\"open_issues_count\":1,\"forks\":0,\"open_issues\":1,\"watchers\":0,\"default_branch\":\"master\"}},\"base\":{\"label\":\"subvisual:master\",\"ref\":\"master\",\"sha\":\"ee6b0c3a7be751c0746c8ee6c7d6167552ac573c\",\"user\":{\"login\":\"subvisual\",\"id\":1085467,\"avatar_url\":\"https://avatars1.githubusercontent.com/u/1085467?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/subvisual\",\"html_url\":\"https://github.com/subvisual\",\"followers_url\":\"https://api.github.com/users/subvisual/followers\",\"following_url\":\"https://api.github.com/users/subvisual/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/subvisual/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/subvisual/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/subvisual/subscriptions\",\"organizations_url\":\"https://api.github.com/users/subvisual/orgs\",\"repos_url\":\"https://api.github.com/users/subvisual/repos\",\"events_url\":\"https://api.github.com/users/subvisual/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/subvisual/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"repo\":{\"id\":97733218,\"name\":\"blog-test\",\"full_name\":\"subvisual/blog-test\",\"owner\":{\"login\":\"subvisual\",\"id\":1085467,\"avatar_url\":\"https://avatars1.githubusercontent.com/u/1085467?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/subvisual\",\"html_url\":\"https://github.com/subvisual\",\"followers_url\":\"https://api.github.com/users/subvisual/followers\",\"following_url\":\"https://api.github.com/users/subvisual/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/subvisual/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/subvisual/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/subvisual/subscriptions\",\"organizations_url\":\"https://api.github.com/users/subvisual/orgs\",\"repos_url\":\"https://api.github.com/users/subvisual/repos\",\"events_url\":\"https://api.github.com/users/subvisual/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/subvisual/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"private\":true,\"html_url\":\"https://github.com/subvisual/blog-test\",\"description\":\"Just a repository to test subvisual/orwell and subvisual/blog in.\",\"fork\":false,\"url\":\"https://api.github.com/repos/subvisual/blog-test\",\"forks_url\":\"https://api.github.com/repos/subvisual/blog-test/forks\",\"keys_url\":\"https://api.github.com/repos/subvisual/blog-test/keys{/key_id}\",\"collaborators_url\":\"https://api.github.com/repos/subvisual/blog-test/collaborators{/collaborator}\",\"teams_url\":\"https://api.github.com/repos/subvisual/blog-test/teams\",\"hooks_url\":\"https://api.github.com/repos/subvisual/blog-test/hooks\",\"issue_events_url\":\"https://api.github.com/repos/subvisual/blog-test/issues/events{/number}\",\"events_url\":\"https://api.github.com/repos/subvisual/blog-test/events\",\"assignees_url\":\"https://api.github.com/repos/subvisual/blog-test/assignees{/user}\",\"branches_url\":\"https://api.github.com/repos/subvisual/blog-test/branches{/branch}\",\"tags_url\":\"https://api.github.com/repos/subvisual/blog-test/tags\",\"blobs_url\":\"https://api.github.com/repos/subvisual/blog-test/git/blobs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/subvisual/blog-test/git/tags{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/subvisual/blog-test/git/refs{/sha}\",\"trees_url\":\"https://api.github.com/repos/subvisual/blog-test/git/trees{/sha}\",\"statuses_url\":\"https://api.github.com/repos/subvisual/blog-test/statuses/{sha}\",\"languages_url\":\"https://api.github.com/repos/subvisual/blog-test/languages\",\"stargazers_url\":\"https://api.github.com/repos/subvisual/blog-test/stargazers\",\"contributors_url\":\"https://api.github.com/repos/subvisual/blog-test/contributors\",\"subscribers_url\":\"https://api.github.com/repos/subvisual/blog-test/subscribers\",\"subscription_url\":\"https://api.github.com/repos/subvisual/blog-test/subscription\",\"commits_url\":\"https://api.github.com/repos/subvisual/blog-test/commits{/sha}\",\"git_commits_url\":\"https://api.github.com/repos/subvisual/blog-test/git/commits{/sha}\",\"comments_url\":\"https://api.github.com/repos/subvisual/blog-test/comments{/number}\",\"issue_comment_url\":\"https://api.github.com/repos/subvisual/blog-test/issues/comments{/number}\",\"contents_url\":\"https://api.github.com/repos/subvisual/blog-test/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/subvisual/blog-test/compare/{base}...{head}\",\"merges_url\":\"https://api.github.com/repos/subvisual/blog-test/merges\",\"archive_url\":\"https://api.github.com/repos/subvisual/blog-test/{archive_format}{/ref}\",\"downloads_url\":\"https://api.github.com/repos/subvisual/blog-test/downloads\",\"issues_url\":\"https://api.github.com/repos/subvisual/blog-test/issues{/number}\",\"pulls_url\":\"https://api.github.com/repos/subvisual/blog-test/pulls{/number}\",\"milestones_url\":\"https://api.github.com/repos/subvisual/blog-test/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/subvisual/blog-test/notifications{?since,all,participating}\",\"labels_url\":\"https://api.github.com/repos/subvisual/blog-test/labels{/name}\",\"releases_url\":\"https://api.github.com/repos/subvisual/blog-test/releases{/id}\",\"deployments_url\":\"https://api.github.com/repos/subvisual/blog-test/deployments\",\"created_at\":\"2017-07-19T15:34:48Z\",\"updated_at\":\"2017-07-19T15:36:40Z\",\"pushed_at\":\"2017-07-20T15:03:08Z\",\"git_url\":\"git://github.com/subvisual/blog-test.git\",\"ssh_url\":\"git@github.com:subvisual/blog-test.git\",\"clone_url\":\"https://github.com/subvisual/blog-test.git\",\"svn_url\":\"https://github.com/subvisual/blog-test\",\"homepage\":null,\"size\":1138,\"stargazers_count\":0,\"watchers_count\":0,\"language\":\"CSS\",\"has_issues\":true,\"has_projects\":true,\"has_downloads\":true,\"has_wiki\":true,\"has_pages\":false,\"forks_count\":0,\"mirror_url\":null,\"open_issues_count\":1,\"forks\":0,\"open_issues\":1,\"watchers\":0,\"default_branch\":\"master\"}},\"_links\":{\"self\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/pulls/11\"},\"html\":{\"href\":\"https://github.com/subvisual/blog-test/pull/11\"},\"issue\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/issues/11\"},\"comments\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/issues/11/comments\"},\"review_comments\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/pulls/11/comments\"},\"review_comment\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/pulls/comments{/number}\"},\"commits\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/pulls/11/commits\"},\"statuses\":{\"href\":\"https://api.github.com/repos/subvisual/blog-test/statuses/291e06ded187bb7f7e3a4cb9dc9d176b99908d03\"}}}]",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Thu, 20 Jul 2017 15:03:08 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "14235",
+        "Status": "200 OK",
+        "X-RateLimit-Limit": "5000",
+        "X-RateLimit-Remaining": "4961",
+        "X-RateLimit-Reset": "1500565798",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"b32018cc0b9176aaacdbcce654b998c8\"",
+        "X-OAuth-Scopes": "repo, user",
+        "X-Accepted-OAuth-Scopes": "",
+        "X-OAuth-Client-Id": "b8932e8cb2e156171f4f",
+        "X-GitHub-Media-Type": "github.v3; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+        "Access-Control-Allow-Origin": "*",
+        "Content-Security-Policy": "default-src 'none'",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "deny",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Runtime-rack": "0.177564",
+        "X-GitHub-Request-Id": "C6F0:14EB:98EC:14FAD:5970C62B"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

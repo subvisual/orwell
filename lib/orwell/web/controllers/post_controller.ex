@@ -49,7 +49,7 @@ defmodule Orwell.Web.PostController do
   def create(conn, %{"post" => post_form_params}) do
     current_user = Guardian.Plug.current_resource(conn)
     github_config = conn.assigns[:github_config]
-    id = next_post_id(github_config)
+    id = Orwell.GitHub.next_post_id(github_config)
     path =
       post_form_params["title"]
       |> Orwell.GitHub.Blog.to_filename(id)
@@ -76,16 +76,6 @@ defmodule Orwell.Web.PostController do
       |> assign(:post, post)
       |> render("new.html")
     end
-  end
-
-  defp next_post_id(github_config) do
-    {:ok, posts} = Orwell.GitHub.posts(github_config)
-
-    current_max_id = posts
-         |> Stream.map(&Map.get(&1, "id"))
-         |> Enum.max
-
-    current_max_id + 1
   end
 
   defp create_post(post, config) do
